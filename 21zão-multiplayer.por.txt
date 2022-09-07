@@ -1,0 +1,121 @@
+programa//21 Multiplayer do Dérick
+//Autor: Dérick Heliodoro dos Santos
+//Data de criação: 06/09/2022
+{
+	//Biblioteca para geração de cartas 
+	inclua biblioteca Util --> util
+	funcao inicio ()
+	{
+		//Variáveis Jogador 1
+		inteiro a1,a2,a3,a4,a5,at 
+		//Variáveis Jogador 2
+		inteiro b1,b2,b3,b4,b5,bt
+		//Variáveis Total
+		cadeia r1,r2
+		//Setup
+		a3=0
+		a4=0
+		a5=0
+		b3=0
+		b4=0
+		b5=0
+		//Sorteio de cartas
+		a1=util.sorteia(1,10)
+		a2=util.sorteia(1,10)
+		b1=util.sorteia(1,10)
+		b2=util.sorteia(1,10)
+		//Soma dos totais
+		at=a1+a2
+		bt=b1+b2
+		//Introdução
+		escreva("\t\t\t\t================\n\t\t\t\t|21 Multiplayer|\n\t\t\t\t================\n\n")
+		escreva("Mão do jogador 1: ",at," (",a1,";",a2,")")
+		escreva("\nJogador 1 deseja comprar?\n")
+		//Decisão de compra 
+		leia(r1)
+		//Se comprar 
+		se (r1=="s" ou r1=="S" ou r1=="sim" ou r1=="Sim")
+			a3=util.sorteia(1,10) //Sorteie +1 carta
+		at=a1+a2+a3 //Some ao total1
+		limpa()
+		escreva("Mão do jogador 2: ",bt," (",b1,";",b2,")")
+		escreva("\nJogador 2 deseja comprar?\n")
+		//Decisão de compra 
+		leia(r2)
+		//Se comprar 
+		se (r2=="s" ou r2=="S" ou r2=="sim" ou r2=="Sim")
+			b3=util.sorteia(1,10) //Sorteie +1 carta
+			bt=b1+b2+b3 //Some ao total2
+		limpa()
+		//Repetir para mais cartas
+		se (r1=="s" ou r1=="S" ou r1=="sim" ou r1=="Sim"){
+			escreva("Mão do jogador 1: ",at," (",a1,";",a2,";",a3,")")
+			escreva("\nJogador 1 deseja comprar?\n")
+		//Decisão de compra 
+			leia(r1)
+		}
+		se (r1=="s" ou r1=="S" ou r1=="sim" ou r1=="Sim"){
+			a4=util.sorteia(1,10)
+			at=a1+a2+a3+a4
+		}
+		limpa()
+		se (r2=="s" ou r2=="S" ou r2=="sim" ou r2=="Sim"){
+			escreva("Mão do jogador 2: ",bt," (",b1,";",b2,";",b3,")")
+			escreva("\nJogador 2 deseja comprar?\n")
+		//Decisão de compra 
+			leia(r2)
+		}
+		se (r2=="s" ou r2=="S" ou r2=="sim" ou r2=="Sim"){
+			b4=util.sorteia(1,10)
+			bt=b1+b2+b3+b4
+		}
+		limpa()
+		se (r1=="s" ou r1=="S" ou r1=="sim" ou r1=="Sim"){
+			escreva("Mão do jogador 1: ",at," (",a1,";",a2,";",a3,";",a4,")")
+			escreva("\nJogador 1 deseja comprar?\n")
+		//Decisão de compra 
+			leia(r1)
+		}
+		se (r1=="s" ou r1=="S" ou r1=="sim" ou r1=="Sim"){
+			a5=util.sorteia(1,10)
+			at=a1+a2+a3+a4+a5
+		}
+		limpa()
+		
+		se (r2=="s" ou r2=="S" ou r2=="sim" ou r2=="Sim"){
+			escreva("Mão do jogador 2: ",bt," (",b1,";",b2,";",b3,";",b4,")")
+			escreva("\nJogador 2 deseja comprar?\n")
+		//Decisão de compra 
+			leia(r2)
+		}
+		se (r2=="s" ou r2=="S" ou r2=="sim" ou r2=="Sim"){
+			b5=util.sorteia(1,10)
+			bt=b1+b2+b3+b4+b5
+		}
+		//Soma final dos totais
+		at=a1+a2+a3+a4+a5
+		bt=b1+b2+b3+b4+b5
+		limpa()
+		//Caso Empate
+		se(at==bt) ou (at>21 e bt>21){
+			escreva("Mão do Jogador 1: ",at," (",a1,";",a2,";",a3,";",a4,";",a5,")")
+			escreva("\nMão do Jogador 2: ",bt," (",b1,";",b2,";",b3,";",b4,";",b5,")")
+			escreva("\n\n\t\t\t\t\t=========\n\t\t\t\t\t|Empate!|\n\t\t\t\t\t=========")
+		}
+		senao{
+			//Caso Jogador 2 ganhe 
+			se (bt>at) ou (at>21){
+				escreva("Mão do Jogador 1: ",at," (",a1,";",a2,";",a3,";",a4,";",a5,")")
+				escreva("\nMão do Jogador 2: ",bt," (",b1,";",b2,";",b3,";",b4,";",b5,")")
+				escreva("\n\n\t\t\t===================\n\t\t\t|Jogador 2 ganhou!|\n\t\t\t===================")
+			}
+			senao
+			//Caso Jogador 1 ganhe 
+			se(at>bt) ou (bt>21){
+				escreva("Mão do Jogador 1: ",at," (",a1,";",a2,";",a3,";",a4,";",a5,")")
+				escreva("\nMão do Jogador 2: ",bt," (",b1,";",b2,";",b3,";",b4,";",b5,")")
+				escreva("\n\n\t\t\t===================\n\t\t\t|Jogador 1 ganhou!|\n\t\t\t===================")
+			}
+		}
+	}
+}
