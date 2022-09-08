@@ -12,7 +12,7 @@ programa//21 Multiplayer do Dérick
 		inteiro b[20],bt
 		//Variáveis Total
 		cadeia r1,r2
-		//Variável para troca de turnod
+		//Variável para troca de turnos
 		cadeia x	
 		//Setup
 		//Sorteio de cartas
