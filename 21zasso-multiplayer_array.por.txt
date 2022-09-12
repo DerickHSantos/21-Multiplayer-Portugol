@@ -108,21 +108,21 @@ programa//21 Multiplayer do Dérick
 		bt=b[1]+b[2]+b[3]+b[4]+b[5]
 		limpa()
 		//Caso Empate
-		se(at==bt) ou (at>21 e bt>21){
+		se(at==bt ou at>21 e bt>21){
 			escreva("Mão do Jogador 1: ",at," (",a[1],";",a[2],";",a[3],";",a[4],";",a[5],")")
 			escreva("\nMão do Jogador 2: ",bt," (",b[1],";",b[2],";",b[3],";",b[4],";",b[5],")")
 			escreva("\n\n\t\t\t\t\t=========\n\t\t\t\t\t|Empate!|\n\t\t\t\t\t=========")
 		}
 		senao{
 			//Caso Jogador 2 ganhe 
-			se (bt>at) ou (at>21){
+			se (bt>at ou at>21){
 				escreva("Mão do Jogador 1: ",at," (",a[1],";",a[2],";",a[3],";",a[4],";",a[5],")")
 				escreva("\nMão do Jogador 2: ",bt," (",b[1],";",b[2],";",b[3],";",b[4],";",b[5],")")
 				escreva("\n\n\t\t\t===================\n\t\t\t|Jogador 2 ganhou!|\n\t\t\t===================")
 			}
 			senao
 			//Caso Jogador 1 ganhe 
-			se(at>bt) ou (bt>21){
+			se(at>bt ou bt>21){
 				escreva("Mão do Jogador 1: ",at," (",a[1],";",a[2],";",a[3],";",a[4],";",a[5],")")
 				escreva("\nMão do Jogador 2: ",bt," (",b[1],";",b[2],";",b[3],";",b[4],";",b[5],")")
 				escreva("\n\n\t\t\t===================\n\t\t\t|Jogador 1 ganhou!|\n\t\t\t===================")
